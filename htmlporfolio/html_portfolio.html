@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Rugendo - Portfolio</title>
+    <style>
+       :root {
+            --primary-color: #2563eb;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+        header {
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 8px 24px rgba(30, 41, 59, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 0.85rem 2rem;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: inherit;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+        .brand-copy {
+            display: grid;
+            line-height: 1.2;
+        }
+        .logo {
+            font-size: 0.98rem;
+            font-weight: 750;
+            color: var(--dark-color);
+        }
+        .brand-role {
+            margin-top: 0.2rem;
+            color: var(--gray-color);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .nav-links a {
+            display: block;
+            text-decoration: none;
+            color: var(--gray-color);
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 0.65rem 0.8rem;
+            border-radius: 6px;
+            transition: color 0.2s, background-color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a:focus-visible {
+            color: var(--primary-color);
+            background: #eff6ff;
+            outline: none;
+        }
+        @media (max-width: 640px) {
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 0.85rem 1.25rem;
+            }
+            .nav-links {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 0.15rem;
+            }
+            .nav-links a {
+                padding: 0.5rem 0.65rem;
+                font-size: 0.85rem;
+            }
+        }
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        section {
+            background: #ffffff;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        h1, h2, h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-color);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .media-container {
+            margin-top: 1rem;
+        }
+        video, audio {
+            width: 100%;
+            border-radius: 6px;
+        }
+        .job {
+            margin-bottom: 1.5rem;
+        }
+        .job-title {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        .job-meta {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        ul.resume-list {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        ul.resume-list li {
+            margin-bottom: 0.5rem;
+            color: var(--gray-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button[type="submit"] {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark-color);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style> 
+</head>
+<body>
+<header>
+    <nav aria-label="Main navigation">
+        <a class="brand" href="#about" aria-label="Mark Rugendo, home">
+            <span class="brand-mark" aria-hidden="true">MR</span>
+            <span class="brand-copy">
+                <span class="logo">Mark Rugendo</span>
+                <span class="brand-role">Tech Enthusiast</span>
+            </span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#work">Professional Experience</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate Tech enthusiast with proven problem-solving skills and a strong aptitude for rapid learning based in Nairobi, Kenya.</p>
+             
+    </section>
+
+    <section id="work">
+        <h2>Professional Experience</h2>
+        <p>Here is an overview of my professional experience.</p>
+
+        <div class="job">
+                <div class="job-title">IT Apprentice - M-PESA, Africa</div>
+                <div class="job-meta">02/2025 - 04/2025 | Nairobi, Kenya</div>
+                <ul class="resume-list">
+                    <li><strong>Strategic Alignment:</strong> Partnered with senior colleagues to define project scopes and ensure deliverables remained aligned with core organizational objectives.</li>
+                    <li><strong>Process Automation:</strong> Collaborated cross-functionally with HR to design and launch an automated employee recognition platform, enhancing workplace culture and internal communications.</li>
+                    <li><strong>Product Development:</strong> Contributed to the engineering of an IT Service Desk Application, successfully transitioning the department from manual email tracking to a centralized ticketing system.</li>
+                    <li><strong>Technical Support:</strong> Provided high-level technical assistance and hardware/software troubleshooting, ensuring zero downtime for team members.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Data Administrator - Tradco, Africa</div>
+                <div class="job-meta">01/2024 - 04/2024 | Nairobi, Kenya</div>
+                <ul class="resume-list">
+                    <li><strong>Business Intelligence & EDA:</strong> Leveraged Exploratory Data Analysis (EDA) to generate comprehensive sales performance reports, providing actionable insights for trade merchandisers and stakeholders.</li>
+                    <li><strong>Technical Enablement:</strong> Spearheaded technical support and training for field teams on the Retail Field Metrics (RFM) application, improving data integrity and efficiency.</li>
+                    <li><strong>Market Research & Field Strategy:</strong> Conducted immersive field visits with the Weetabix merchandising team to gain firsthand market insights and execute on-shelf strategies[cite: 1].</li>
+                </ul>
+            </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume and Skills</h2>
+        <p>Download my resume <a href="resume.pdf">here</a>.</p>
+
+<h3>Education</h3>
+            <p><strong>Bachelor of Science, Informatics and Computer Science</strong><br>
+            Strathmore University (07/2021 - 12/2025), Nairobi, Kenya[cite: 1]</p>
+
+        <h3>Skills</h3>
+        <ul class="skills-list">
+            <li>Web Development: HTML, CSS, JavaScript</li>
+            <li>Data Analysis: Python, SQL, Excel</li>
+            <li>Project Management: Agile, Scrum</li>
+            <li>Technical Support: Hardware/Software Troubleshooting</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Have an opportunity or project in mind? Reach out using the form below:</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+    </section>
+</main>
+<footer>
+        <p>&copy; 2026 Mark Rugendo. All rights reserved.</p>
+</footer> 
+</body>
+</html>
